@@ -7,14 +7,15 @@ export const assets = {
   line1: "/figma/line-1.svg",
   line2: "/figma/line-2.svg",
   maskStrip: "/figma/fictional-company-logo.svg",
+  /** Bottom horizon — order matches Figma node 616:2744–616:2751 */
   horizon: {
-    base: "/figma/ellipse-43641.svg",
-    outer: "/figma/ellipse-43647.svg",
-    layer1: "/figma/ellipse-43646.svg",
-    layer2: "/figma/ellipse-43642.svg",
-    layer3: "/figma/ellipse-43643.svg",
-    layer4: "/figma/ellipse-43644.svg",
-    layer5: "/figma/ellipse-43645.svg",
+    layer43641: "/figma/ellipse-43641.svg",
+    layer43647: "/figma/ellipse-43647.svg",
+    layer43646: "/figma/ellipse-43646.svg",
+    layer43642: "/figma/ellipse-43642.svg",
+    layer43643: "/figma/ellipse-43643.svg",
+    layer43644: "/figma/ellipse-43644.svg",
+    layer43645: "/figma/ellipse-43645.svg",
   },
   logos: [
     { mark: "/figma/logomark-0.svg", type: "/figma/logotype-0.svg" },

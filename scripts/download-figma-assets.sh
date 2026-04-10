@@ -16,19 +16,21 @@ fetch() {
 
 # URLs from Figma MCP get_design_context export
 fetch "https://www.figma.com/api/mcp/asset/b053142f-303c-4021-b952-19be11529e95" "$DEST/carbon-shape-exclude.svg"
-fetch "https://www.figma.com/api/mcp/asset/4189d3cf-466a-4443-a407-0ea59669d593" "$DEST/ellipse-43660.svg"
-fetch "https://www.figma.com/api/mcp/asset/7cb602d0-a6b7-4e31-a272-fadf4ebb57c8" "$DEST/ellipse-43661.svg"
-fetch "https://www.figma.com/api/mcp/asset/4150ab8d-d600-4a71-9269-565869f3d268" "$DEST/ellipse-43659.svg"
+# Hero shadow glows — Figma 616:2716 / 616:2717
+fetch "https://www.figma.com/api/mcp/asset/246d83fc-0ba1-40a8-a89c-9d216d0105b1" "$DEST/ellipse-43660.svg"
+fetch "https://www.figma.com/api/mcp/asset/19f6a04c-c724-4d4f-9147-60a28fe88234" "$DEST/ellipse-43661.svg"
+fetch "https://www.figma.com/api/mcp/asset/68cd9f22-659d-48fe-ba39-d45def3daa91" "$DEST/ellipse-43659.svg"
 fetch "https://www.figma.com/api/mcp/asset/74940c04-d748-4192-9e1e-a8af00fcdd08" "$DEST/line-1.svg"
 fetch "https://www.figma.com/api/mcp/asset/ae0b7ef1-a39e-432e-b33b-47cd5a453a4e" "$DEST/line-2.svg"
 fetch "https://www.figma.com/api/mcp/asset/4a578afd-7695-4594-ad9b-e66cbc8bb8b5" "$DEST/fictional-company-logo.svg"
-fetch "https://www.figma.com/api/mcp/asset/5220d724-7a51-4cad-9980-0b6b74c6843e" "$DEST/ellipse-43641.svg"
-fetch "https://www.figma.com/api/mcp/asset/a1cb2845-610b-4ee1-8a89-806018353344" "$DEST/ellipse-43647.svg"
-fetch "https://www.figma.com/api/mcp/asset/b4868e6d-6257-45cd-9eff-46ca1c02c250" "$DEST/ellipse-43646.svg"
-fetch "https://www.figma.com/api/mcp/asset/4ac721b4-7201-4177-811c-c0123e7f5990" "$DEST/ellipse-43642.svg"
-fetch "https://www.figma.com/api/mcp/asset/45550116-a861-4b31-b2e9-34705fbc8b20" "$DEST/ellipse-43643.svg"
-fetch "https://www.figma.com/api/mcp/asset/ee1e7906-def8-464f-90eb-fa96ee1dc689" "$DEST/ellipse-43644.svg"
-fetch "https://www.figma.com/api/mcp/asset/85c4b66b-ef53-4039-8483-9e4215b572f4" "$DEST/ellipse-43645.svg"
+# Horizon stack — Figma 616:2744 MCP asset IDs
+fetch "https://www.figma.com/api/mcp/asset/47e62da1-39f8-45b9-9317-ff7273310549" "$DEST/ellipse-43641.svg"
+fetch "https://www.figma.com/api/mcp/asset/21fad1b8-8f73-49be-bcef-43e3d0e8dd3a" "$DEST/ellipse-43647.svg"
+fetch "https://www.figma.com/api/mcp/asset/b2e08723-4388-499e-80ed-9d95195f063c" "$DEST/ellipse-43646.svg"
+fetch "https://www.figma.com/api/mcp/asset/3b39c79a-c225-44e7-8929-2829881a70b2" "$DEST/ellipse-43642.svg"
+fetch "https://www.figma.com/api/mcp/asset/57c0391e-54b8-4a97-bd26-56d69133d64c" "$DEST/ellipse-43643.svg"
+fetch "https://www.figma.com/api/mcp/asset/f72542ca-c9f4-4331-9c7d-68153aa863b9" "$DEST/ellipse-43644.svg"
+fetch "https://www.figma.com/api/mcp/asset/8d07bfe2-1a4d-43ea-98a4-1631fbc0d8e6" "$DEST/ellipse-43645.svg"
 
 fetch "https://www.figma.com/api/mcp/asset/b6f2fbc7-816f-4fea-99d9-a9f9a755bfdd" "$DEST/logomark-0.svg"
 fetch "https://www.figma.com/api/mcp/asset/9c5d2b8c-d33c-482f-bfa2-35dc129dc4b7" "$DEST/logotype-0.svg"

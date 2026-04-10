@@ -109,6 +109,43 @@ body {
   animation-play-state: paused;
 }
 
+/* Horizon “globe” stack (616:2744+) — slow parallax drift between layers */
+@keyframes horizon-globe-drift {
+  0% {
+    transform: translate3d(-18px, 4px, 0);
+  }
+  100% {
+    transform: translate3d(18px, -4px, 0);
+  }
+}
+
+/* Subtle rim “breathing” on base ellipses (nested inside drift) */
+@keyframes horizon-globe-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.014);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .horizon-globe-drift {
+    animation: horizon-globe-drift var(--drift-duration, 90s) ease-in-out infinite
+      alternate;
+    animation-delay: var(--drift-delay, 0s);
+    will-change: transform;
+  }
+
+  .horizon-globe-breathe {
+    transform-origin: 50% 88%;
+    animation: horizon-globe-breathe 20s ease-in-out infinite alternate;
+    animation-delay: var(--breathe-delay, 0s);
+    will-change: transform;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .logo-marquee-track {
     animation: none !important;
@@ -139,5 +176,17 @@ body {
     animation: none !important;
     transform: none !important;
     opacity: 0.35;
+  }
+
+  .horizon-globe-drift {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto;
+  }
+
+  .horizon-globe-breathe {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto;
   }
 }

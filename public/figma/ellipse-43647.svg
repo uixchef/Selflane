@@ -1,15 +1,15 @@
 <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 2244 1717.07" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Ellipse 43647" filter="url(#filter0_f_0_70)">
+<g id="Ellipse 43647" filter="url(#filter0_f_0_8)">
 <ellipse cx="1122" cy="858.536" rx="1110" ry="846.536" fill="var(--fill-0, black)"/>
-<path d="M1122 12.5C1428.42 12.5 1705.81 107.221 1906.58 260.342C2107.36 413.462 2231.5 624.961 2231.5 858.536C2231.5 1092.11 2107.36 1303.61 1906.58 1456.73C1705.81 1609.85 1428.42 1704.57 1122 1704.57C815.582 1704.57 538.191 1609.85 337.415 1456.73C136.64 1303.61 12.5001 1092.11 12.5 858.536C12.5 624.961 136.64 413.462 337.415 260.342C538.191 107.221 815.582 12.5 1122 12.5Z" stroke="url(#paint0_linear_0_70)"/>
+<path d="M1122 12.5C1428.42 12.5 1705.81 107.221 1906.58 260.342C2107.36 413.462 2231.5 624.961 2231.5 858.536C2231.5 1092.11 2107.36 1303.61 1906.58 1456.73C1705.81 1609.85 1428.42 1704.57 1122 1704.57C815.582 1704.57 538.191 1609.85 337.415 1456.73C136.64 1303.61 12.5001 1092.11 12.5 858.536C12.5 624.961 136.64 413.462 337.415 260.342C538.191 107.221 815.582 12.5 1122 12.5Z" stroke="url(#paint0_linear_0_8)"/>
 </g>
 <defs>
-<filter id="filter0_f_0_70" x="0" y="0" width="2244" height="1717.07" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_f_0_8" x="0" y="0" width="2244" height="1717.07" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="6" result="effect1_foregroundBlur_0_70"/>
+<feGaussianBlur stdDeviation="6" result="effect1_foregroundBlur_0_8"/>
 </filter>
-<linearGradient id="paint0_linear_0_70" x1="1122" y1="12" x2="1122" y2="226.184" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_0_8" x1="1122" y1="12" x2="1122" y2="226.184" gradientUnits="userSpaceOnUse">
 <stop stop-color="white"/>
 <stop offset="1" stop-opacity="0"/>
 </linearGradient>

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element -- Figma SVG layers (exact stack; decorative) */
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 
 import { Button } from "@/components/ui/button";
 import { FigmaMeteorLines } from "@/components/selflane/figma-meteor-lines";
@@ -22,9 +23,22 @@ const HEADLINE_GRADIENT =
 const BADGE_TEXT_GRADIENT =
   "linear-gradient(90deg, rgb(145, 145, 145) 8.6793%, rgb(255, 255, 255) 23.343%, rgb(255, 255, 255) 30.288%, rgb(145, 145, 145) 38.332%)";
 
+/** Figma 616:2719 — Frame 2095585131 fill (`bg-gradient-to-r` + stop at 14.657%). */
+const BADGE_SURFACE_GRADIENT =
+  "linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(153, 153, 153, 0.1) 14.657%, rgba(153, 153, 153, 0.1) 100%)";
+
+/** Figma 616:2747–616:2751 — mix-blend-plus-lighter stack (insets from Dev Mode). */
+const HORIZON_PLUS_LAYERS = [
+  { nodeId: "616:2747", src: assets.horizon.layer43646, inset: "inset-[-0.74%_-0.56%]" },
+  { nodeId: "616:2748", src: assets.horizon.layer43642, inset: "inset-[-0.74%_-0.56%]" },
+  { nodeId: "616:2749", src: assets.horizon.layer43643, inset: "inset-[-0.49%_-0.38%]" },
+  { nodeId: "616:2750", src: assets.horizon.layer43644, inset: "inset-[-0.25%_-0.19%]" },
+  { nodeId: "616:2751", src: assets.horizon.layer43645, inset: "inset-[-0.25%_-0.19%]" },
+] as const;
+
 /**
- * Figma 616:2744–616:2751 — full horizon stack. `isolation` + capped layer opacity
- * keeps plus-lighter from blowing out to flat white in the browser.
+ * Figma 616:2744–616:2751 — full horizon stack. `isolation` + capped opacity on plus-lighter
+ * keeps the rim stable in the browser (same approach as earlier Figma exports).
  */
 function HorizonStack({ className }: { className?: string }) {
   const h = assets.horizon;
@@ -34,36 +48,74 @@ function HorizonStack({ className }: { className?: string }) {
         "pointer-events-none absolute left-1/2 top-[800.76px] isolate w-full max-w-[1440px] -translate-x-1/2 overflow-x-clip max-lg:hidden",
         className,
       )}
+      data-node-id="616:2744"
     >
-      {/* 616:2745 */}
-      <div className="absolute left-[calc(50%-3.29px)] top-0 h-[1422.651px] w-[1865.417px] -translate-x-1/2">
-        <div className="absolute inset-[-0.84%_-0.64%]">
-          <img src={h.layer43641} alt="" className="block size-full max-w-none" />
-        </div>
-      </div>
-      {/* 616:2746 */}
-      <div className="absolute left-1/2 top-[11.05px] h-[1693.072px] w-[2220px] -translate-x-1/2">
-        <div className="absolute inset-[-0.71%_-0.54%]">
-          <img src={h.layer43647} alt="" className="block size-full max-w-none" />
-        </div>
-      </div>
-      {(
-        [
-          h.layer43646,
-          h.layer43642,
-          h.layer43643,
-          h.layer43644,
-          h.layer43645,
-        ] as const
-      ).map((src) => (
+      {/* 616:2745 — top 801px on artboard ⇒ +0.24px vs group origin */}
+      <div
+        className="absolute left-[calc(50%-3.29px)] top-[0.24px] h-[1422.651px] w-[1865.417px] -translate-x-1/2"
+        data-node-id="616:2745"
+      >
         <div
-          key={src}
+          className="horizon-globe-drift absolute inset-0"
+          style={
+            {
+              "--drift-duration": "92s",
+              "--drift-delay": "0s",
+            } as CSSProperties
+          }
+        >
+          <div
+            className="horizon-globe-breathe absolute inset-0"
+            style={{ "--breathe-delay": "-4s" } as CSSProperties}
+          >
+            <div className="absolute inset-[-0.84%_-0.64%]">
+              <img src={h.layer43641} alt="" className="block size-full max-w-none" />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* 616:2746 — top 811.81px on artboard ⇒ +11.05px */}
+      <div
+        className="absolute left-1/2 top-[11.05px] h-[1693.072px] w-[2220px] -translate-x-1/2"
+        data-node-id="616:2746"
+      >
+        <div
+          className="horizon-globe-drift absolute inset-0"
+          style={
+            {
+              "--drift-duration": "118s",
+              "--drift-delay": "-38s",
+            } as CSSProperties
+          }
+        >
+          <div
+            className="horizon-globe-breathe absolute inset-0"
+            style={{ "--breathe-delay": "-11s" } as CSSProperties}
+          >
+            <div className="absolute inset-[-0.71%_-0.54%]">
+              <img src={h.layer43647} alt="" className="block size-full max-w-none" />
+            </div>
+          </div>
+        </div>
+      </div>
+      {HORIZON_PLUS_LAYERS.map((layer, i) => (
+        <div
+          key={layer.nodeId}
           className="absolute left-[-348.89px] top-0 mix-blend-plus-lighter"
           style={{ opacity: 0.34 }}
+          data-node-id={layer.nodeId}
         >
-          <div className="relative h-[1626.446px] w-[2132.639px]">
-            <div className="absolute inset-[-0.5%]">
-              <img src={src} alt="" className="block size-full max-w-none" />
+          <div
+            className="horizon-globe-drift relative h-[1626.446px] w-[2132.639px]"
+            style={
+              {
+                "--drift-duration": `${72 + i * 16}s`,
+                "--drift-delay": `${-i * 24}s`,
+              } as CSSProperties
+            }
+          >
+            <div className={cn("absolute", layer.inset)}>
+              <img src={layer.src} alt="" className="block size-full max-w-none" />
             </div>
           </div>
         </div>
@@ -72,10 +124,14 @@ function HorizonStack({ className }: { className?: string }) {
   );
 }
 
-/** Figma 616:2716 — ellipse behind headline area */
+/** Figma 616:2716 — large soft shadow behind headline (800×303 @ y 649) */
 function HeroGlowLarge() {
   return (
-    <div className="pointer-events-none absolute left-1/2 top-[649px] z-[2] hidden h-[303px] w-[800px] max-w-[calc(100vw-48px)] -translate-x-1/2 lg:block">
+    <div
+      className="pointer-events-none absolute left-1/2 top-[649px] z-[2] hidden h-[303px] w-[800px] max-w-[calc(100vw-48px)] -translate-x-1/2 lg:block"
+      aria-hidden
+      data-node-id="616:2716"
+    >
       <div className="absolute inset-[-82.51%_-31.25%]">
         <img
           src={assets.glowLarge}
@@ -87,10 +143,14 @@ function HeroGlowLarge() {
   );
 }
 
-/** Figma 616:2717 */
+/** Figma 616:2717 — tight secondary shadow (284×76 @ y 776) */
 function HeroGlowSmall() {
   return (
-    <div className="pointer-events-none absolute left-1/2 top-[776px] z-[2] hidden h-[76px] w-[284px] max-w-[calc(100vw-48px)] -translate-x-1/2 lg:block">
+    <div
+      className="pointer-events-none absolute left-1/2 top-[776px] z-[2] hidden h-[76px] w-[284px] max-w-[calc(100vw-48px)] -translate-x-1/2 lg:block"
+      aria-hidden
+      data-node-id="616:2717"
+    >
       <div className="absolute inset-[-131.58%_-35.21%]">
         <img
           src={assets.glowSmall}
@@ -104,10 +164,16 @@ function HeroGlowSmall() {
 
 export function LandingPage() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-black text-white">
+    <div
+      className={cn(
+        "relative overflow-x-hidden bg-black text-white",
+        "min-h-screen",
+        /* Figma Desktop - 4 is 1024px tall — drop min-h-[2480px] empty scroll; lock lg viewport */
+        "lg:h-[min(1024px,100vh)] lg:min-h-0 lg:overflow-hidden",
+      )}
+    >
       <MeteorField />
-      {/* Figma “Desktop - 4” artboard — min height fits horizon stack (node 616:2744+) */}
-      <div className="relative z-10 mx-auto min-h-[2480px] w-full max-w-[1440px] max-lg:min-h-0">
+      <div className="relative z-10 mx-auto h-full w-full max-w-[1440px]">
         {/* Mobile: subtle bottom wash (full Figma stack is lg+ only) */}
         <div
           aria-hidden
@@ -168,12 +234,16 @@ export function LandingPage() {
 
         {/* 616:2718 — hero column */}
         <main className="absolute left-1/2 top-[176px] z-20 flex w-[min(785px,calc(100%-48px))] -translate-x-1/2 flex-col items-center gap-6 text-center max-lg:relative max-lg:left-auto max-lg:top-0 max-lg:mt-8 max-lg:w-full max-lg:translate-x-0 max-lg:px-4">
+          {/* Figma 616:2719 — 284×37: border-white + surface gradient (single layer; matches file). */}
           <div
-            className={cn(
-              "inline-flex shrink-0 items-center justify-center gap-[10px] rounded-[100px] border border-solid border-white bg-gradient-to-r from-[rgba(255,255,255,0.1)] to-[rgba(153,153,153,0.1)] px-6 py-2.5",
-            )}
+            className="inline-flex shrink-0 items-center justify-center gap-[10px] rounded-[100px] border border-solid border-white px-[24px] py-[10px]"
+            data-node-id="616:2719"
+            style={{ backgroundImage: BADGE_SURFACE_GRADIENT }}
           >
-            <span className="relative block size-[6px] shrink-0">
+            <span
+              className="relative size-[6px] shrink-0"
+              data-node-id="616:2720"
+            >
               <Image
                 src={assets.badgeDot}
                 alt=""
@@ -183,7 +253,8 @@ export function LandingPage() {
               />
             </span>
             <p
-              className="bg-clip-text text-[14px] font-normal tracking-[0.28px] text-transparent"
+              className="relative shrink-0 bg-clip-text text-center text-[14px] font-normal leading-normal tracking-[0.28px] text-transparent whitespace-nowrap"
+              data-node-id="616:2721"
               style={{ backgroundImage: BADGE_TEXT_GRADIENT }}
             >
               Build Your Online Identity Today

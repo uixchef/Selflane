@@ -1,14 +1,14 @@
 <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 2156.64 1650.45" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Ellipse 43642" filter="url(#filter0_f_0_61)" style="mix-blend-mode:plus-lighter">
-<path d="M1078.32 12.5C1372.68 12.5 1639.15 103.493 1832.02 250.585C2024.89 397.677 2144.14 600.847 2144.14 825.224C2144.14 1049.6 2024.89 1252.77 1832.02 1399.86C1639.15 1546.95 1372.68 1637.95 1078.32 1637.95C783.963 1637.95 517.492 1546.95 324.621 1399.86C131.75 1252.77 12.5002 1049.6 12.5 825.224C12.5 600.847 131.75 397.677 324.621 250.585C517.492 103.493 783.963 12.5 1078.32 12.5Z" stroke="url(#paint0_linear_0_61)"/>
+<g id="Ellipse 43642" filter="url(#filter0_f_0_7)" style="mix-blend-mode:plus-lighter">
+<path d="M1078.32 12.5C1372.68 12.5 1639.15 103.493 1832.02 250.585C2024.89 397.677 2144.14 600.847 2144.14 825.224C2144.14 1049.6 2024.89 1252.77 1832.02 1399.86C1639.15 1546.95 1372.68 1637.95 1078.32 1637.95C783.963 1637.95 517.492 1546.95 324.621 1399.86C131.75 1252.77 12.5002 1049.6 12.5 825.224C12.5 600.847 131.75 397.677 324.621 250.585C517.492 103.493 783.963 12.5 1078.32 12.5Z" stroke="url(#paint0_linear_0_7)"/>
 </g>
 <defs>
-<filter id="filter0_f_0_61" x="0" y="0" width="2156.64" height="1650.45" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_f_0_7" x="0" y="0" width="2156.64" height="1650.45" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="6" result="effect1_foregroundBlur_0_61"/>
+<feGaussianBlur stdDeviation="6" result="effect1_foregroundBlur_0_7"/>
 </filter>
-<linearGradient id="paint0_linear_0_61" x1="1078.32" y1="12" x2="1077.89" y2="109.051" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_0_7" x1="1078.32" y1="12" x2="1077.89" y2="109.051" gradientUnits="userSpaceOnUse">
 <stop stop-color="white"/>
 <stop offset="1" stop-opacity="0"/>
 </linearGradient>

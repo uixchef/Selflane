@@ -33,7 +33,7 @@ function LogoGroup({
             alt=""
             width={32}
             height={32}
-            className="h-[26px] w-auto object-contain sm:h-7 md:h-8"
+            className="h-[26px] w-auto object-contain grayscale sm:h-7 md:h-8"
           />
           <Image
             src={logo.type}
@@ -55,7 +55,7 @@ export function LogoMaskStrip() {
   return (
     <section
       aria-label="Partner logos"
-      className="z-[15] mx-auto mt-12 w-full max-lg:mt-12 lg:pointer-events-none lg:absolute lg:left-1/2 lg:top-[697px] lg:mt-0 lg:w-full lg:max-w-[1440px] lg:-translate-x-1/2"
+      className="z-[15] mx-auto mt-12 w-[min(785px,calc(100%-48px))] max-lg:mt-12 lg:pointer-events-none lg:absolute lg:left-1/2 lg:top-[697px] lg:mt-0 lg:-translate-x-1/2"
       data-name="Mask group"
       data-node-id="616:2734"
     >
